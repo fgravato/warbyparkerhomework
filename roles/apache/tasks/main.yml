@@ -1,0 +1,20 @@
+---
+# This role installs httpd
+
+- name: Install http and php etc
+  yum: name={{ item }} state=present
+  with_items:
+   - httpd
+   - httpd-devel
+
+- name: Install Mod_RPAF for Apache
+  yum: name=http://y-ken.github.com/package/centos/6/x86_64/mod_rpaf-fork-0.6-5.el6.x86_64.rpm state=present
+
+- name: http service state
+  service: name=httpd state=started enabled=yes
+
+
+- name: Cleanup Httpd Config
+  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+  notify: 
+  - restart httpd

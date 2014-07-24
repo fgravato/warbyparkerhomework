@@ -1,0 +1,2 @@
+192.168.121.102  app app01 app01.example.com
+192.168.121.101  front front01 front01.example.com lb01 lb01.example.com

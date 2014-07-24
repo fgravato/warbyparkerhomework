@@ -1,0 +1,49 @@
+# httpd is handled by the base-apache role upstream
+- name: Install php & mysql
+  yum: name={{ item }} enablerepo=epel state=present
+  with_items:
+   - php
+   - php-mysql
+   - git
+   - php-cli 
+   - php-devel
+   - php-gd 
+   - gd-devel
+   - geoip-devel
+   - php-process 
+   - php-pecl-apc 
+   - memcached 
+   - libmemcached-devel 
+   - libmemcached 
+   - php-pecl-memcache 
+   - php-pecl-memcached
+   - php-pecl-mongo
+   - php-pecl-geoip
+   - php-pecl-http
+   - php-pecl-raphf
+   - php-pecl-propro
+   - php-imap 
+   - php-ldap 
+   - php-odbc 
+   - php-pear 
+   - php-xml 
+   - php-xmlrpc 
+   - php-mbstring 
+   - php-mcrypt 
+   - php-soap 
+   - php-tidy 
+   - php-pgsql 
+   - php-intl 
+   - php-dba 
+   - curl 
+   - curl-devel 
+   - perl-libwww-perl 
+   - ImageMagick 
+   - ImageMagick-devel 
+   - php-magickwand 
+   - php-pecl-imagick 
+   - php-channel-phpunit
+   - libxml2 
+   - libxml2-devel 
+   - pcre-devel 
+   - zlib-devel 

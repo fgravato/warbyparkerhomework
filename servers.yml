@@ -1,0 +1,21 @@
+---
+
+- name: app
+  ip: 192.168.121.102
+  port: 2202
+  memory: 512
+  user: vagrant
+  sudo: True
+  sudo_user: vagrant 
+  group: app
+
+- name: front
+  ip: 192.168.121.101
+  port: 2201
+  memory: 256
+  user: vagrant
+  sudo: True
+  sudo_user: vagrant
+  group: lb
+
+

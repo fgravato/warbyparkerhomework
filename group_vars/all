@@ -1,0 +1,10 @@
+---
+
+
+# These are the database settings
+db_name: infratest 
+db_user: infratest
+db_password: infra1234
+
+# You shouldn't need to change this.
+mysql_port: 3306

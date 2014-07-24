@@ -1,0 +1,11 @@
+---
+
+- name: Install Memcached package
+  yum: name={{ item }} enablerepo=epel state=installed
+  with_items:
+   - memcached
+   - libmemcached-devel 
+   - libmemcached 
+
+- name: memcached service state
+  service: name=memcached state=started enabled=yes

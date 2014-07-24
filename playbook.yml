@@ -1,0 +1,19 @@
+---
+- hosts: all
+  sudo: true
+  roles:
+    - common
+
+- hosts: front
+  sudo: true
+  roles:
+    - nginx
+    - memcached
+
+- hosts: app
+  sudo: true
+  roles:
+    - apache
+    - php53
+    - mysql
+    - app

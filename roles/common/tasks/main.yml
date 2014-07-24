@@ -11,7 +11,9 @@
 - name: Install Python Tools
   yum: name="python-pip" state=present   
 
-
-
 - name: Copy Host definition
   copy: src=hosts.def dest=/etc/hosts
+
+- name: Create the iptables file for all machines
+  template: src=iptables.j2 dest=/etc/sysconfig/iptables
+  notify: restart iptables

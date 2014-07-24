@@ -25,8 +25,12 @@ Vagrant.configure("2") do |config|
 
       # Disable default limit (required with Vagrant 1.5+)
       ansible.limit = 'all'
+      ansible.groups = {
+      "app" => ["app"],
+      "front" => ["front"],
+      "all_groups:children" => ["app", "front"]
+}
     end
   end
-
   end
 

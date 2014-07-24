@@ -5,7 +5,7 @@
 - name:  create database
   mysql_db: name={{ db_name }} state=present
 
-- name: Create Wordpress database user
+- name: Create  database user
   mysql_user: name={{ db_user }} password={{ db_password }} priv={{ db_name }}.*:ALL host='localhost' state=present
 
 - copy: src=test.sql dest=/tmp
@@ -13,6 +13,6 @@
 - name: Populate Database 
   mysql_db: name={{ db_name }} state=import  target=/tmp/test.sql 
 
-- name: Copy Wordpress config file
+- name: Copy test file
   copy: src=test.php dest=/var/www/html/test.php
 
